@@ -1,0 +1,227 @@
+import java.util.Scanner;
+
+public class App {
+    public static Scanner scanner = new Scanner(System.in);
+    private static String adminUsername = "admin";
+    private static String adminPassword = "password";
+    private static String customerUsername = "customer";
+    private static String customerPassword = "password";
+    
+    public static void main(String[] args) {
+        
+        awal();
+        loginMenu(scanner);
+            
+    }
+    private static void loginMenu(Scanner scanner){
+        boolean isDone = false;
+        while(!isDone){
+            System.out.println(
+                "\n\t==============================================================" +
+                "\n\t||                 Selamat Datang Di Program                ||" +
+                "\n\t||                          B-FOOD                          ||" + 
+                "\n\t||```````````````````````````````````````````````````````||" +
+                "\n\t||                          LOG IN                          ||" + 
+                "\n\t||==========================================================||" + 
+                "\n\t|| LOGIN SEBAGAI                                            ||" + 
+                "\n\t||==========================================================||" + 
+                "\n\t||                                                          ||" + 
+                "\n\t|| [1]. ADMIN                                               ||" + 
+                "\n\t|| [2]. COSTUMER                                            ||" + 
+                "\n\t||==========================================================||" + 
+                "\n\t|| [0]. KELUAR PROGRAM                                      ||" + 
+                "\n\t||==========================================================||"  
+            );
+            System.out.print(
+                "\n\t||==========================================================||" + 
+                "\n\t|| ENTER YOUR CHOICE :" 
+            );
+            
+
+            int choice = Integer.parseInt(scanner.nextLine());
+
+            switch(choice){
+                case 1:
+                    loginAdmin(scanner);
+                    break;
+                case 2:
+                    loginCustomer(scanner);
+                    break;
+                default:
+                    isDone = true;
+                    System.out.println(
+                        "\n\t==============================================================" +
+                        "\n\t||                 Selamat Datang Di Program                ||" +
+                        "\n\t||                          B-FOOD                          ||" + 
+                        "\n\t||```````````````````````````````````````````````````````||" +
+                        "\n\t||                          LOG IN                          ||" + 
+                        "\n\t||==========================================================||" + 
+                        "\n\t||                        Thank You :>                      ||" + 
+                        "\n\t||==========================================================||"  
+                    );
+                break;
+            }
+        }
+    }
+    private static void loginAdmin(Scanner scanner){
+        boolean isLoggedIn = false;
+        String username, password;
+        while (!isLoggedIn) {
+            System.out.print(
+                "\n\t||==========================================================||" + 
+                "\n\t|| Enter your username: "                                   
+            );
+            username = scanner.nextLine();
+            
+            System.out.print(
+                "\t|| Enter your password: " 
+            );
+            password = scanner.nextLine();
+            
+            System.out.print(
+                "\t||==========================================================||"
+            );
+
+            if (username.equals(adminUsername) && password.equals(adminPassword)) {
+                isLoggedIn = true;
+                System.out.println(
+                    "\n\t==============================================================" +
+                    "\n\t||                 Selamat Datang Di Program                ||" +
+                    "\n\t||                          B-FOOD                          ||" + 
+                    "\n\t||```````````````````````````````````````````````````````||" +
+                    "\n\t||                          LOG IN                          ||" + 
+                    "\n\t||==========================================================||" + 
+                    "\n\t|| You have successfully logged in as an admin.             ||" + 
+                    "\n\t||==========================================================||"  
+                );
+                adminMenu(scanner);
+            }else {
+                System.out.println(
+                    "\n\t==============================================================" +
+                    "\n\t||                 Selamat Datang Di Program                ||" +
+                    "\n\t||                          B-FOOD                          ||" + 
+                    "\n\t||```````````````````````````````````````````````````````||" +
+                    "\n\t||                          LOG IN                          ||" + 
+                    "\n\t||==========================================================||" + 
+                    "\n\t|| Invalid username or password. Please try again.          ||" + 
+                    "\n\t||==========================================================||" + 
+                    "\n\t|| [0]. KELUAR PROGRAM                                      ||" + 
+                    "\n\t||==========================================================||"  
+                );
+                
+            }
+        }
+    }
+    private static void adminMenu(Scanner scanner2) {
+        System.out.println("Bagian ini belum dibuat oleh programmer");
+    }
+    private static void loginCustomer(Scanner scanner){
+        boolean isLoggedIn = false;
+        while (!isLoggedIn) {
+            System.out.println(
+                "\n\t==============================================================" +
+                "\n\t||                 Selamat Datang Di Program                ||" +
+                "\n\t||                          B-FOOD                          ||" + 
+                "\n\t||```````````````````````````````````````````````````````||" +
+                "\n\t||                          LOG IN                          ||" + 
+                "\n\t||==========================================================||" + 
+                "\n\t|| LOGIN SEBAGAI COSTUMER                                   ||" + 
+                "\n\t||==========================================================||" + 
+                "\n\t|| Enter your username:                                     ||" +  
+                "\n\t||==========================================================||" + 
+                "\n\t|| [0]. KELUAR PROGRAM                                      ||" + 
+                "\n\t||==========================================================||"    
+            );
+            close();
+            String username = scanner.nextLine();
+            System.out.println(
+                "\n\t==============================================================" +
+                "\n\t||                 Selamat Datang Di Program                ||" +
+                "\n\t||                          B-FOOD                          ||" + 
+                "\n\t||```````````````````````````````````````````````````````||" +
+                "\n\t||                          LOG IN                          ||" + 
+                "\n\t||==========================================================||" + 
+                "\n\t|| LOGIN SEBAGAI COSTUMER                                   ||" + 
+                "\n\t||==========================================================||" + 
+                "\n\t|| Enter your password:                                    ||" +  
+                "\n\t||==========================================================||" + 
+                "\n\t|| [0]. KELUAR PROGRAM                                      ||" + 
+                "\n\t||==========================================================||"    
+            );
+            close();
+            String password = scanner.nextLine();
+
+            if (username.equals(customerUsername) && password.equals(customerPassword)) {
+                isLoggedIn = true;
+                System.out.println(
+                    "\n\t==============================================================" +
+                    "\n\t||                 Selamat Datang Di Program                ||" +
+                    "\n\t||                          B-FOOD                          ||" + 
+                    "\n\t||```````````````````````````````````````````````````````||" +
+                    "\n\t||                          LOG IN                          ||" + 
+                    "\n\t||==========================================================||" + 
+                    "\n\t|| You have successfully logged in as an costumer.          ||" + 
+                    "\n\t||==========================================================||" + 
+                    "\n\t|| [0]. KELUAR PROGRAM                                      ||" + 
+                    "\n\t||==========================================================||"  
+                );
+                close();
+                customerMenu(scanner);
+            } else {
+                System.out.println(
+                    "\n\t==============================================================" +
+                    "\n\t||                 Selamat Datang Di Program                ||" +
+                    "\n\t||                          B-FOOD                          ||" + 
+                    "\n\t||```````````````````````````````````````````````````````||" +
+                    "\n\t||                          LOG IN                          ||" + 
+                    "\n\t||==========================================================||" + 
+                    "\n\t|| Invalid username or password. Please try again.          ||" + 
+                    "\n\t||==========================================================||" + 
+                    "\n\t|| [0]. KELUAR PROGRAM                                      ||" + 
+                    "\n\t||==========================================================||"  
+                );
+                close();
+            }
+        }
+    }
+    private static void customerMenu(Scanner scanner2) {
+    }
+    private static void awal(){
+        System.out.println(
+            "\n\t==============================================================" +
+            "\n\t||                                                          ||" + 
+            "\n\t||                WELCOME TO OUR APPLICATION                ||" + 
+            "\n\t||                          B-FOOD                          ||" + 
+            "\n\t||                                                          ||" + 
+            "\n\t||==========================================================||" + 
+            "\n\t||                    | BERANDA B-FOOD |                    ||" + 
+            "\n\t||==========================================================||" + 
+            "\n\t||             Program disusun dan dibuat oleh :            ||" + 
+            "\n\t||                                                          ||" +
+            "\n\t|| 1. Ni Putu Mirah Kartika Cahyani        (2205551048)     ||" + 
+            "\n\t||----------------------------------------------------------||" +
+            "\n\t||               Jurusan Teknologi Informasi                ||" +
+            "\n\t||                      Fakultas Teknik                     ||" +
+            "\n\t||                    Universitas Udayana                   ||" +
+            "\n\t||                           2023                           ||" +
+            "\n\t||----------------------------------------------------------||" +
+            "\n\t||             Tekan ENTER untuk melanjutkan                ||" +
+            "\n\t=============================================================="
+        );
+        scanner.nextLine();
+        close();
+        
+    }
+    public static void close() {
+       
+        System.out.println("\n\tBerikutnya...");
+        System.out.println("\n\tTekan Enter untuk Melanjutkan...");
+        scanner.nextLine();
+        clearScreen();
+    }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+}

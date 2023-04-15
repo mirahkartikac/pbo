@@ -207,13 +207,102 @@ public class App {
         }
     }
 
-    private static void viewRestaurants() {
-    }
-    
-    private static void addRestaurant(Scanner scanner2) {
-    }
+    private static void viewRestaurants() throws IOException, InterruptedException {
 
-    private static void removeRestaurant(Scanner scanner2) {
+        if (restaurants.size() == 0) {
+            System.out.print(
+                "\n\t||==========================================================||" + 
+                "\n\t|| THERE ARE NO RESTAURANT                                  ||" + 
+                "\n\t||==========================================================||"
+                );
+            close();
+        } else {
+            System.out.print(
+                "\n\t||==========================================================||" + 
+                "\n\t|| RESTAURANT                                               ||" + 
+                "\n\t||==========================================================||" +
+                "\n\t|| ID ||       RESTAURANT NAMES                             "  
+
+            ); 
+            for (int i = 0; i < restaurants.size(); i++) {
+                System.out.print(
+                    "\n\t||  " + (i+1) + ".\t" + restaurants.get(i).getName().toUpperCase() + 
+                    "\n\t|| \t" + "Menu :" + 
+                    "\n\t|| \t" + (1) + ". " + restaurants.get(i).menu.food + ", " + restaurants.get(i).menu.priceFood +
+                    "\n\t|| \t" + (2) + ". " + restaurants.get(i).menu.drink + ", " + restaurants.get(i).menu.priceDrink
+                );
+            }
+            System.out.print(
+                "\n\t||==========================================================||"
+            );
+        }
+    }
+    private static void addRestaurant(Scanner scanner) throws IOException, InterruptedException {
+
+        System.out.print(
+            "\n\t||==========================================================||"+
+            "\n\t|| ENTER THE NAME OF RESTAURANT: "
+        );
+        String name = scanner.next();
+        System.out.print(
+            "\n\t||==========================================================||"+
+            "\n\t|| ENTER THE ADDRESS OF RESTAURANT: "
+        );
+        String address = scanner.next();
+        System.out.print(
+            "\n\t||==========================================================||"+
+            "\n\t|| ENTER THE FOOD OF RESTAURANT: "
+        );
+        String food = scanner.next();
+        System.out.print(
+            "\n\t||==========================================================||"+
+            "\n\t|| ENTER THE DRINK OF RESTAURANT: "
+        );
+        String drink = scanner.next();
+        System.out.print(
+            "\n\t||==========================================================||"+
+            "\n\t|| ENTER THE PRICE OF FOOD: Rp."
+        );
+        int priceFood = scanner.nextInt();
+        System.out.print(
+            "\n\t||==========================================================||"+
+            "\n\t|| ENTER THE PRICE OF DRINK: Rp."
+        );
+        int priceDrink = scanner.nextInt();
+        restaurants.add(new Restaurant(name, address, new Menu(food, drink, priceFood, priceDrink)));
+            
+        System.out.println(
+            "\n\t||==========================================================||"+
+            "\n\t|| " + name.toUpperCase() + " HAS BEEN ADDED TO THE LIST OF RESTAURANT "+
+            "\n\t||==========================================================||"
+        );
+        close();
+    }
+    private static void removeRestaurant(Scanner scanner2) throws IOException, InterruptedException {
+
+        viewRestaurants();
+        System.out.print(
+            "\n\t||==========================================================||"+
+            "\n\t|| ENTER THE NUMBER OF THE RESTAURANT YOU WANT TO REMOVE: "
+        );
+        int choice = scanner2.nextInt();
+            
+        if (choice < 1 || choice > restaurants.size()) {
+            System.out.print(
+                "\n\t||==========================================================||"+
+                "\n\t|| INVALID CHOICE. PLEASE TRY AGAIN.                        ||"+
+                "\n\t||==========================================================||"
+            );
+        } else {
+            String name = restaurants.get(choice-1).getName();
+            restaurants.remove(choice-1);
+            System.out.print(
+                "\n\t||==========================================================||"+
+                "\n\t|| " + name.toUpperCase() + " HAS BEEN REMOVED FROM THE LIST OF THE RESTAURANT."+
+                "\n\t||==========================================================||"
+            );
+        }
+        close();
     }
 
     private static void loginCustomer(Scanner scanner) throws IOException, InterruptedException{

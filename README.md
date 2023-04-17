@@ -1,4 +1,4 @@
-![alt text](https://github.com/mirahkartikac/pbo/blob/b0bc4f7bcd998c3c59044733663ae263f2c36648/UML.pdf?raw=true)
+![alt text](https://github.com/mirahkartikac/pbo/blob/0e5c3fde33fc1fd6594766de62bdfd52676cad58/uml%20baru.jpg?raw=true)
 
 Penjelasan Program
 - Pada login menu itu akan diarahkan ke login admin dan login costumer 

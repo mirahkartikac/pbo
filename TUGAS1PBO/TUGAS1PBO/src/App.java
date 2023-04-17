@@ -367,9 +367,9 @@ public class App {
                 "\n\t|| [1]. VIEW RESTAURANT                                     ||" + 
                 "\n\t|| [2]. MAKE AN ORDER                                       ||" + 
                 "\n\t|| [3]. VIEW ORDER                                          ||" + 
-                "\n\t|| [4]. TOTAL ORDER                                          ||" + 
+                "\n\t|| [4]. TOTAL ORDER                                         ||" + 
                 "\n\t||==========================================================||" + 
-                "\n\t|| [0]. EXIT PROGRAM                                      ||" + 
+                "\n\t|| [0]. EXIT PROGRAM                                        ||" + 
                 "\n\t||==========================================================||"  
             );
             System.out.print(
